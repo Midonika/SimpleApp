@@ -12,7 +12,7 @@ class TestHelpers(TestCase):
     def test_get_keywords_valid(self):
         keywords = ['słońce', 'plaża', 'morze']
 
-        self.assertTrue(keywords == Helper.get_keywords(self.Meta()))
+        self.assertEqual(keywords, Helper.get_keywords(self.Meta()))
 
     def test_get_keywords_invalid(self):
         keywords = ['słońce', 'plaża', 'morze']
@@ -27,7 +27,7 @@ class TestHelpers(TestCase):
 
         data = {'słońce': 2, 'plaża': 1, 'morze': 1}
 
-        self.assertTrue(data == Helper.count_keywords_in_html(html, keywords))
+        self.assertEqual(data, Helper.count_keywords_in_html(html, keywords))
 
     def test_count_keywords_in_html_invalid(self):
         keywords = ['słońce', 'plaża', 'morze']
