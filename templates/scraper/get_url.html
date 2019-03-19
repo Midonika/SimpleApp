@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Pobierz</button>
+    </form>
+    <br/>
+    {% if keywords is not None %}
+        {% if keywords|length > 0 %}
+            <h4>Liczba pobranych słów kluczowych:</h4>
+            {% for key, value in keywords.items %}
+                <div>{{ key }}: {{ value }}</div>
+            {% endfor %}
+        {% else %}
+            <h4 class="danger">Nie pobrano żadnych słów kluczowych</h4>
+        {% endif %}
+    {% endif %}
+{% endblock %}
