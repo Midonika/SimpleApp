@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'scraper',
-    'tests'
+    'scraper'
 ]
 
 MIDDLEWARE = [

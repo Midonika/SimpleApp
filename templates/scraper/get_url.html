@@ -2,20 +2,24 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit">Pobierz</button>
-    </form>
-    <br/>
-    {% if keywords is not None %}
-        {% if keywords|length > 0 %}
-            <h4>Liczba pobranych słów kluczowych:</h4>
-            {% for key, value in keywords.items %}
-                <div>{{ key }}: {{ value }}</div>
-            {% endfor %}
-        {% else %}
-            <h4 class="danger">Nie pobrano żadnych słów kluczowych</h4>
-        {% endif %}
-    {% endif %}
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Download</button>
+            </form>
+            <br/>
+            {% if keywords is not None %}
+                {% if keywords|length > 0 %}
+                    <h4>The number of keywords downloaded:</h4>
+                    {% for key, value in keywords.items %}
+                        <div>{{ key }}: {{ value }}</div>
+                    {% endfor %}
+                {% else %}
+                    <h4 class="danger">No keywords were downloaded!</h4>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

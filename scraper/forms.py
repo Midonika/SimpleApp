@@ -6,4 +6,4 @@ url_validator = RegexValidator("^http[s]?://?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#
 
 
 class UrlForm(forms.Form):
-    url = forms.CharField(required=True, validators=[url_validator])
+    url = forms.CharField(required=True, validators=[url_validator], label="Url address")
