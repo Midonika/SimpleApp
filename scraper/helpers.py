@@ -28,7 +28,8 @@ class Helper:
         result = {}
         html_to_str = html.body.__str__()
         for keyword in keywords:
-            words = [m.start() for m in re.finditer(keyword, html_to_str, re.IGNORECASE)]
+            pattern = "(?<![a-zA-Z0-9])" + keyword + "(?![a-zA-Z0-9])"
+            words = [m.start() for m in re.finditer(pattern, html_to_str, re.IGNORECASE)]
             result[keyword] = len(words)
 
         return result
