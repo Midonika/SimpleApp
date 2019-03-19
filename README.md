@@ -6,3 +6,6 @@ Instruction:
 - virtualenv env
 - pip3 install -r requirements.txt
 - python3 manage.py runserver
+
+Run test:
+- python3 manage.py test
