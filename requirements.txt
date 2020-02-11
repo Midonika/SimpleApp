@@ -16,7 +16,7 @@ cupshelpers==1.0
 defer==1.0.6
 defusedxml==0.5.0
 distro-info==0.18
-Django==2.1.7
+Django==2.2.10
 django-allauth==0.39.0
 django-crispy-forms==1.7.2
 extras==1.0.0
